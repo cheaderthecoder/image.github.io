@@ -38,18 +38,6 @@ document.getElementById("imgInput").onchange = function(event) {
             var img = document.createElement("img");
             img.src = e.target.result;
             document.getElementById('uploadedImages').appendChild(img);
-
-            var urlText = document.createElement("input");
-            urlText.value = e.target.result;
-            document.getElementById('uploadedImages').appendChild(urlText);
-
-            var copyBtn = document.createElement("button");
-            copyBtn.innerHTML = "Copy URL";
-            copyBtn.onclick = function() {
-                urlText.select();
-                document.execCommand("copy");
-            }
-            document.getElementById('uploadedImages').appendChild(copyBtn);
         };
         reader.readAsDataURL(files[i]);
     }
